@@ -51,11 +51,6 @@ abstract class Config {
     const Twitter_access_secret = '';
 
     /**
-     * The FaceBook Access Token
-     */
-    const Facebook_token = '';
-
-    /**
      * The FaceBook App ID
      */
     const FaceBook_App_Id = '';
@@ -69,9 +64,4 @@ abstract class Config {
      * The FaceBook Page to get insights for
      */
     const FaceBook_Page_ID = '';
-
-    /**
-     * The FaceBook App URL (use the address of your local VHost for development, and your production site when you go live)
-     */
-    const FaceBook_App_Url = 'http://local.socialmediadashboard/';
 }
