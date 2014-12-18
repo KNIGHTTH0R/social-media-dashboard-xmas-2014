@@ -39,7 +39,22 @@ $app->get('/twitter/mentions', function() use ($app, $response, $twitter) {
 /**
  * Gets negative Tweets matching a search term
  */
-$app->get('/twitter/mentions/:search', function($search) use ($app, $response, $twitter) {
+$app->get('/twitter/negative/:search', function($search) use ($app, $response, $twitter) {
+    $url = Config::Twitter_api_url.'search/tweets.json';
+    $getfield = '?q='.urlencode($search).'%20%3A(';
+    $requestMethod = 'GET';
+
+    $app->response()->body(
+        $twitter->setGetfield($getfield)
+            ->buildOauth($url, $requestMethod)
+            ->performRequest()
+    );
+});
+
+/**
+ * Gets positive Tweets matching a search term
+ */
+$app->get('/twitter/positive/:search', function($search) use ($app, $response, $twitter) {
     $url = Config::Twitter_api_url.'search/tweets.json';
     $getfield = '?q='.urlencode($search).'%20%3A)';
     $requestMethod = 'GET';
