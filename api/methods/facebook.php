@@ -1,9 +1,53 @@
 <?php
 //-------- FaceBook SERVICE --------//
 
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
+
 /**
- * Get some FaceBook stats
+ * Get some FaceBook page insight stats
  */
-$app->get('/facebook', function() use ($app, $response) {
-    $app->response()->body('Some nice stats :)');
+$app->get('/facebook/page/insights', function() use ($app, $response, $facebookSession) {
+    if (!$facebookSession) {
+        $app->response()->body('User must be logged in');
+    }
+
+    try {
+        $request = (new FacebookRequest(
+            $facebookSession, 'GET', '/'.Config::FaceBook_Page_ID.'/insights'
+        ))->execute()->getGraphObject(GraphUser::className());
+        var_dump(json_encode($request->asArray()));
+        exit;
+        $app->response()->body(json_decode($request));
+    } catch (FacebookRequestException $e) {
+        // The Graph API returned an error
+        $app->response()->body($e->getMessage());
+    } catch (\Exception $e) {
+        // Some other error occurred
+        $app->response()->body($e->getMessage());
+    }
+});
+
+/**
+ * Get the last 5 FaceBook page posts
+ */
+$app->get('/facebook/page/posts', function() use ($app, $response, $facebookSession) {
+    if (!$facebookSession) {
+        $app->response()->body('User must be logged in');
+    }
+
+    try {
+        $request = (new FacebookRequest(
+            $facebookSession, 'GET', '/'.Config::FaceBook_Page_ID.'/posts?limit=5'
+        ))->execute()->getGraphObject(GraphUser::className());
+        var_dump(json_encode($request->asArray()));
+        exit;
+        $app->response()->body(json_decode($request));
+    } catch (FacebookRequestException $e) {
+        // The Graph API returned an error
+        $app->response()->body($e->getMessage());
+    } catch (\Exception $e) {
+        // Some other error occurred
+        $app->response()->body($e->getMessage());
+    }
 });

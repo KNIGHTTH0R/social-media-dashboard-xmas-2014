@@ -46,6 +46,27 @@ $twitterApiPhpSettings = array(
 
 $twitter = new TwitterAPIExchange($twitterApiPhpSettings);
 
+// Setup the FaceBook SDK
+define('FACEBOOK_SDK_V4_SRC_DIR', __DIR__.'/lib/facebook-php-sdk-v4-4.0-dev/src/Facebook/');
+require __DIR__ . '/lib/facebook-php-sdk-v4-4.0-dev/autoload.php';
+
+use Facebook\FacebookSession;
+use Facebook\FacebookRequestException;
+
+FacebookSession::setDefaultApplication(Config::FaceBook_App_Id, Config::FaceBook_App_Secret);
+
+$facebookSession = FacebookSession::newAppSession();
+// To validate the session:
+try {
+    $facebookSession->validate();
+} catch (FacebookRequestException $ex) {
+    // Session not valid, Graph API returned an exception with the reason.
+    echo $ex->getMessage();
+} catch (\Exception $ex) {
+    // Graph API returned info, but it may mismatch the current app or have expired.
+    echo $ex->getMessage();
+}
+
 // Instantiate the Slim app
 require 'lib/Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
