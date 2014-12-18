@@ -9,15 +9,15 @@ DO NOT edit `api/config.template.php` directly or commit `api/config.php` to a p
 ## API methods
 
 
-**Get some FaceBook page insight stats**
+**GET some FaceBook page insight stats**
 
 `/api/REST.php/facebook/page/insights`
 
-**Get the last 5 FaceBook page posts**
+**GET the last 5 FaceBook page posts**
 
 `/api/REST.php/facebook/page/posts`
 
-**Get some Twitter stats and information about the user** - Returns useful stuff like:  
+**GET some Twitter stats and information about the user** - Returns useful stuff like:  
 favourites_count  
 followers_count    
 friends_count  
@@ -26,14 +26,14 @@ status (most recent status)
 
 `/api/REST.php/twitter/user`
 
-**Gets Tweets that mention us**
+**GETs Tweets that mention us**
 
 `/api/REST.php/twitter/mentions`
 
-**Gets negative Tweets matching a search term**
+**GETs negative Tweets matching a search term**
 
 `/api/REST.php/twitter/negative/:searchterm`
 
-**Gets positive Tweets matching a search term**
+**GETs positive Tweets matching a search term**
 
 `/api/REST.php/twitter/positive/:searchterm`
