@@ -26,6 +26,10 @@ status (most recent status)
 
 `/api/REST.php/twitter/user`
 
+**GETs the last 5 tweets**
+
+`/api/REST.php/twitter/statuses`
+
 **GETs Tweets that mention us**
 
 `/api/REST.php/twitter/mentions`

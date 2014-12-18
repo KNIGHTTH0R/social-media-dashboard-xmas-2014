@@ -24,6 +24,21 @@ $app->get('/twitter/user', function() use ($app, $response, $twitter) {
 });
 
 /**
+ * Gets the last 5 tweets
+ */
+$app->get('/twitter/statuses', function() use ($app, $response, $twitter) {
+    $url = Config::Twitter_api_url.'statuses/user_timeline.json';
+    $getfield = '?count=5';
+    $requestMethod = 'GET';
+
+    $app->response()->body(
+        $twitter->setGetfield($getfield)
+            ->buildOauth($url, $requestMethod)
+            ->performRequest()
+    );
+});
+
+/**
  * Gets Tweets that mention us
  */
 $app->get('/twitter/mentions', function() use ($app, $response, $twitter) {
