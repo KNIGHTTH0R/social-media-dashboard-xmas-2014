@@ -16,9 +16,7 @@ $app->get('/facebook/page/insights', function() use ($app, $response, $facebookS
         $request = (new FacebookRequest(
             $facebookSession, 'GET', '/'.Config::FaceBook_Page_ID.'/insights'
         ))->execute()->getGraphObject(GraphUser::className());
-        var_dump(json_encode($request->asArray()));
-        exit;
-        $app->response()->body(json_decode($request));
+        $app->response()->body(json_encode($request->asArray()));
     } catch (FacebookRequestException $e) {
         // The Graph API returned an error
         $app->response()->body($e->getMessage());
@@ -40,9 +38,7 @@ $app->get('/facebook/page/posts', function() use ($app, $response, $facebookSess
         $request = (new FacebookRequest(
             $facebookSession, 'GET', '/'.Config::FaceBook_Page_ID.'/posts?limit=5'
         ))->execute()->getGraphObject(GraphUser::className());
-        var_dump(json_encode($request->asArray()));
-        exit;
-        $app->response()->body(json_decode($request));
+        $app->response()->body(json_encode($request->asArray()));
     } catch (FacebookRequestException $e) {
         // The Graph API returned an error
         $app->response()->body($e->getMessage());
