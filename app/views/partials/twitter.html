@@ -1,0 +1,12 @@
+Friends: {{user.friends_count}}
+Followers: {{user.followers_count}}
+Tweets count: {{user.statuses_count}}
+Favourites count: {{user.favourites_count}}
+<hr>
+<h1>{{user.name}} </h1> <h5>@{{user.screen_name}}</h5>
+<div ng-repeat="tweet in tweets">
+	{{tweet.text}}
+	Favourited: {{tweet.favorite_count}}
+	Retweeted: {{tweet.retweet_count}}
+	<hr>
+</div>
