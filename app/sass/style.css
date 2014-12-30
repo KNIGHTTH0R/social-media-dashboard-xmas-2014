@@ -18,7 +18,6 @@ body {
   margin: 0; }
 
 .col {
-  float: left;
   margin: 0; }
   .col.col_full {
     width: 100%; }
@@ -78,16 +77,25 @@ h2 {
   font-size: 2.4rem; }
 
 h3 {
-  font-size: 1.2rem; }
+  font-size: 1.3rem;
+  font-style: bold; }
 
 h4 {
-  font-size: 1.6rem; }
+  font-size: 1.1rem;
+  font-style: bold; }
 
 h5 {
-  font-size: 1.2rem; }
+  font-size: 1rem; }
 
 h6 {
-  font-size: 1rem; }
+  font-size: 0.8rem;
+  color: #929292; }
+
+p {
+  text-align: left;
+  font-size: 1rem;
+  padding-right: 10px;
+  color: #333; }
 
 @media screen and (max-width: 1024px) {
   h1, h2, h3, h4, h5, h6 {
@@ -99,10 +107,7 @@ h6 {
     .col h1, .col h2, .col h3, .col h4, .col h5, .col h6 {
       word-break: break-all; } }
 .center {
-  text-align: center;
-  margin-top: 1rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #f7f7f7; }
+  text-align: center; }
 
 .background_red a,
 .background_grey a {
@@ -169,6 +174,18 @@ h6 {
   width: 100%;
   height: auto; }
 
+.user-picture {
+  float: left;
+  display: block;
+  width: 8%;
+  height: auto; }
+
+.informations-post {
+  display: block; }
+
+.float {
+  float: left; }
+
 .header {
   background-color: #dedede;
   height: 15%; }
@@ -199,18 +216,11 @@ h6 {
   .icon.icon-twitter {
     content: '\e802'; }
 
-.competa-fb-picture {
+.competa-picture {
   background-color: #ccc;
   height: 100%; }
 
-.competa-tw-picture {
-  background-color: #ccc;
-  height: 100%; }
-
-.competa-fb-username {
-  padding-left: 10px; }
-
-.competa-tw-username {
+.competa-username {
   padding-left: 10px; }
 
 .nav ul {
