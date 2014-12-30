@@ -6,7 +6,7 @@
  */
 smdc.factory('TwitterService',['$resource', 'restAPI', function($resource, restAPI) {
 	return {
-		posts: $resource(restAPI.url+'facebook/page/posts'),
-		insights: $resource(restAPI.url+'facebook/page/insights')
+			user: $resource(restAPI.temp+'twitter.user.json'),
+			tweets: $resource(restAPI.temp+'twitter.status.json')
 	};
 }]);
