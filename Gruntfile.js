@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         }
       },
       compass: {
-        files: ['<%= smdc.app %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= smdc.app %>/sass/{,*/}*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
       livereload: {
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         },
         files: [
           '<%= smdc.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
+          '.tmp/sass/{,*/}*.css',
           '<%= smdc.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
         ignorePath:  /\.\.\//
       },
       sass: {
-        src: ['<%= smdc.app %>/styles/{,*/}*.{scss,sass}'],
+        src: ['<%= smdc.app %>/sass/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
@@ -126,9 +126,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/styles/',
+          cwd: '.tmp/sass/',
           src: '{,*/}*.css',
-          dest: '.tmp/styles/'
+          dest: '.tmp/sass/'
         }]
       }
     },
@@ -170,7 +170,7 @@ module.exports = function(grunt) {
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
       html: ['<%= smdc.dist %>/{,*/}*.html'],
-      css: ['<%= smdc.dist %>/styles/{,*/}*.css'],
+      css: ['<%= smdc.dist %>/sass/{,*/}*.css'],
       options: {
         assetsDirs: ['<%= smdc.dist %>','<%= smdc.dist %>/images']
       }
@@ -179,16 +179,16 @@ module.exports = function(grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        sassDir: '<%= smdc.app %>/styles',
-        cssDir: '.tmp/styles',
+        sassDir: '<%= smdc.app %>/sass',
+        cssDir: '.tmp/sass',
         generatedImagesDir: '.tmp/images/generated',
         imagesDir: '<%= smdc.app %>/images',
         javascriptsDir: '<%= smdc.app %>/js',
-        fontsDir: '<%= smdc.app %>/styles/fonts',
+        fontsDir: '<%= smdc.app %>../font',
         importPath: './bower_components',
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
+        httpFontsPath: '../font',
         relativeAssets: false,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
