@@ -11,6 +11,13 @@
 
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,900italic,300italic,300,400italic,700,700italic,900);
 
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+
+/* brandico */
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
+}
+
 body {
   font-family: klavika-web,sans-serif;
 }
@@ -23,25 +30,41 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 0 0;
 }
 
-h1 {font-size: 3rem; text-transform: uppercase;}
+h1 {font-size: 2rem; color: $white;}
 h2 {font-size: 2.4rem;}
-h3 {font-size: 1.2rem;}
-h4 {font-size: 1.6rem;}
-h5 {font-size: 1.2rem;}
-h6 {font-size: 1rem;}
+h3 {font-size: 1.3rem;
+    font-style: bold;
+    margin-top: 3%;
+    }
+h4 {font-size: 1.1rem;
+    font-style: bold;
+    }
+h5 {font-size: 1rem;}
+h6 {font-size: 0.8rem;
+    color: $darkgrey;
+    }
+
+p {
+  text-align: left;
+  font-size: 0.9rem;
+  padding-right: 10px;
+  color: $black;
+  line-height: 14.5pt;
+
+}
 
 @media screen and (max-width: 1024px) {
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5 {
     font-size: 1.2rem;
     word-break: break-all;
   }
 }
 
 @media screen and (max-width: 770px) {
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5 {
       font-size: 1rem;
       .col & {
         word-break: break-all;
@@ -51,9 +74,6 @@ h6 {font-size: 1rem;}
 
 .center {
   text-align: center;
-  margin-top: 1rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid $white;
 }
 
 .background_red,

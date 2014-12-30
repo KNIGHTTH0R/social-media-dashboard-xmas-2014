@@ -1,0 +1,12 @@
+{{insights.name}}
+<div ng-repeat="post in posts">
+	<h1>Post {{$index}}</h1>
+	{{post.message}}
+	<hr>
+</div>
+
+<h1>Facebook Insights</h1>
+Likes: {{insights.likes}}
+Checkins: {{insights.checkins}}
+Talking about: {{insights.talking_about_count}}
+Website url: {{insights.website}}
