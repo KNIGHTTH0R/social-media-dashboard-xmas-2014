@@ -1,11 +1,26 @@
 <div ng-controller="FacebookCtrl">
-<h1>Facebook Posts</h1>
-{{posts}}
-<hr>
-<h1>Facebook Insights</h1>
-{{insights}}
-<hr>
+	{{insights.name}}
+	<div ng-repeat="post in posts">
+		<h1>Post {{$index}}</h1>
+		{{post.message}}
+		<hr>
+	</div>
+		<h1>Facebook Insights</h1>
+		Likes: {{insights.likes}}
+		Checkins: {{insights.checkins}}
+		Talking about: {{insights.talking_about_count}}
+		Website url: {{insights.website}}
 </div>
+<hr>
 <div ng-controller="TwitterCtrl">
-
+	Friends: {{user.friends_count}}
+	Followers: {{user.followers_count}}
+	Tweets count: {{user.statuses_count}}
+	Favourites count: {{user.favourites_count}}
+	<hr>
+	<h1>{{user.name}} </h1> <h5>@{{user.screen_name}}</h5>
+	<div ng-repeat="tweet in tweets">
+	{{tweet.text}}
+	Favourited: {{tweet.favorite_count}}
+	Retweeted: {{tweet.retweet_count}}<hr></div>
 </div>

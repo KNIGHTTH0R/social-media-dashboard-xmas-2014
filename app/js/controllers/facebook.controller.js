@@ -6,15 +6,19 @@
  */
 
 smdc.controller('FacebookCtrl',['$scope', 'FacebookService', function($scope, FacebookService) {
-	/**
-	 * Returns 5 latest posts from Facebook
-	 * @type {array}
-	 */
-	$scope.posts = FacebookService.posts.get();
 
 	/**
-	 * Returns Facebook insights
-	 * @type {array}
+	 * Returns 5 latest posts from Facebook
 	 */
-	$scope.insights = FacebookService.insights.get();
+	FacebookService.posts.get(function(posts) {
+		$scope.posts = posts.data;
+	});
+		
+	/**
+	 * Returns Facebook insights
+	 */
+	FacebookService.insights.get(function(insights) {
+		$scope.insights = insights;
+	});
+	
 }]);
