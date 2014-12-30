@@ -17,19 +17,23 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     // Project settings
-    smdb: appConfig,
+    smdc: appConfig,
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
+      },
       js: {
-        files: ['<%= smdb.app %>/js/{,*/}*.js'],
+        files: ['<%= smdc.app %>/js/{,*/}*.js'],
         tasks: ['jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
       compass: {
-        files: ['<%= smdb.app %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= smdc.app %>/sass/{,*/}*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
       livereload: {
@@ -37,9 +41,9 @@ module.exports = function(grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= smdb.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
-          '<%= smdb.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= smdc.app %>/{,*/}*.html',
+          '.tmp/sass/{,*/}*.css',
+          '<%= smdc.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
@@ -69,11 +73,22 @@ module.exports = function(grunt) {
       dist: {
         options: {
           open: true,
-          base: '<%= smdb.dist %>'
+          base: '<%= smdc.dist %>'
         }
       }
     },
 
+    // Automatically inject Bower components into the app
+    wiredep: {
+      app: {
+        src: ['<%= smdc.app %>/index.html'],
+        ignorePath:  /\.\.\//
+      },
+      sass: {
+        src: ['<%= smdc.app %>/sass/{,*/}*.{scss,sass}'],
+        ignorePath: /(\.\.\/){1,2}bower_components\//
+      }
+    },
 
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
@@ -83,7 +98,7 @@ module.exports = function(grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= smdb.app %>/js/{,*/}*.js'
+          '<%= smdc.app %>/js/{,*/}*.js'
         ]
       }
     },
@@ -95,8 +110,8 @@ module.exports = function(grunt) {
           dot: true,
           src: [
             '.tmp',
-            '<%= smdb.dist %>/{,*/}*',
-            '!<%= smdb.dist %>/.git{,*/}*'
+            '<%= smdc.dist %>/{,*/}*',
+            '!<%= smdc.dist %>/.git{,*/}*'
           ]
         }]
       },
@@ -111,33 +126,76 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/styles/',
+          cwd: '.tmp/sass/',
           src: '{,*/}*.css',
-          dest: '.tmp/styles/'
+          dest: '.tmp/sass/'
         }]
+      }
+    },
+
+    'sails-linker': {
+      defaultOptions: {
+        options: {
+          startTag: '<!--SCRIPTS-->',
+          endTag: '<!--SCRIPTS END-->',
+          fileTmpl: '<script src="%s"></script>',
+          appRoot: 'app/'
+        },
+        files: {
+          // Target-specific file lists and/or options go here.
+          'app/index.html': ['app/js/**/*.js']
+        },
+      },
+    },
+
+    // Reads HTML for usemin blocks to enable smart builds that automatically
+    // concat, minify and revision files. Creates configurations in memory so
+    // additional tasks can operate on them
+    useminPrepare: {
+      html: '<%= smdc.app %>/index.html',
+      options: {
+        dest: '<%= smdc.dist %>',
+        flow: {
+          html: {
+            steps: {
+              js: ['concat', 'uglifyjs'],
+              css: ['cssmin']
+            },
+            post: {}
+          }
+        }
+      }
+    },
+
+    // Performs rewrites based on filerev and the useminPrepare configuration
+    usemin: {
+      html: ['<%= smdc.dist %>/{,*/}*.html'],
+      css: ['<%= smdc.dist %>/sass/{,*/}*.css'],
+      options: {
+        assetsDirs: ['<%= smdc.dist %>','<%= smdc.dist %>/images']
       }
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        sassDir: '<%= smdb.app %>/styles',
-        cssDir: '.tmp/styles',
+        sassDir: '<%= smdc.app %>/sass',
+        cssDir: '.tmp/sass',
         generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= smdb.app %>/images',
-        javascriptsDir: '<%= smdb.app %>/js',
-        fontsDir: '<%= smdb.app %>/styles/fonts',
+        imagesDir: '<%= smdc.app %>/images',
+        javascriptsDir: '<%= smdc.app %>/js',
+        fontsDir: '<%= smdc.app %>../font',
         importPath: './bower_components',
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
+        httpFontsPath: '../font',
         relativeAssets: false,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
       dist: {
         options: {
-          generatedImagesDir: '<%= smdb.dist %>/images/generated'
+          generatedImagesDir: '<%= smdc.dist %>/images/generated'
         }
       },
       server: {
@@ -165,6 +223,8 @@ module.exports = function(grunt) {
     }
     grunt.task.run([
       'clean:server',
+      'wiredep',
+      'sails-linker',
       'autoprefixer',
       'connect:livereload',
       'watch'
@@ -173,8 +233,14 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'wiredep',
+    'sails-linker',
+    'useminPrepare',
     'autoprefixer',
+    'concat',
     'cssmin',
+    'filerev',
+    'usemin',
     'uglify'
   ]);
 

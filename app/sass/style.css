@@ -161,13 +161,13 @@ p {
   h2,
   h3 {
     page-break-after: avoid; } }
-.clear:before, .clear:after {
+.clear:before, .full:before, .col:before, .clear:after, .full:after, .col:after {
   content: ' ';
   display: table; }
 
-.clear {
+.clear, .full, .col {
   *zoom: 1; }
-  .clear:after {
+  .clear:after, .full:after, .col:after {
     clear: both; }
 
 .container {
