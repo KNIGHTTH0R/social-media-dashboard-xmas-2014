@@ -1,19 +1,21 @@
 .header {
 	background-color: $grey;
-	height: 15%;
+	height: 80px;
 }
 
 
 .facebook-logo {
 	display: block;
 	background-color: $blue;
-	height: 100%;
+	height: 80px;
+	width: 60px;
 }
 
 .twitter-logo {
 	display: block;
 	background-color: $lightblue;
-	height: 100%;
+	height: 80px;
+	width: 60px;
 }
 
 
@@ -34,21 +36,14 @@
 	&.icon-twitter { content: '\e802'; }
 }
 
-.competa-fb-picture {
+.competa-picture {
 	background-color: #ccc;
-	height: 100%;
+	height: 80px;
+	width: 80px;
 }
 
-.competa-tw-picture {
-	background-color: #ccc;
-	height: 100%; 
-}
 
-.competa-fb-username {
-	padding-left: 10px;	
-}
-
-.competa-tw-username {
+.competa-username {
 	padding-left: 10px;	
 }
 

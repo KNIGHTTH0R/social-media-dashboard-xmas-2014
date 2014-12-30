@@ -1,3 +1,6 @@
+// Vendor
+@import 'vendor/_normalize.scss';
+
 // Mixins
 @import 'mixins/_position.scss';
 @import 'mixins/_transition.scss';
@@ -21,8 +24,6 @@
 @import 'partials/_footer.scss';
 @import 'partials/_content.scss';
 
-// Vendor
-@import 'vendor/_normalize.scss';
 
 body {
 	color: black;
