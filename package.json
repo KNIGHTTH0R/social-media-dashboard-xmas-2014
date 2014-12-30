@@ -1,6 +1,7 @@
 {
   "name": "smdc",
   "version": "0.1.0",
+  "repository": "https://github.com/Competa-IT/social-media-dashboard-xmas-2014.git",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^2.0.0",
