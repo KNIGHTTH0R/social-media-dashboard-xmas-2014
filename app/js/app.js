@@ -13,7 +13,9 @@ var smdc = angular.module('smdc',
 	]);
 	
 	smdc.constant('restAPI', {
-		'url': 'http://smdc.api/REST.php/'
+		'url': 'http://smdc.api/REST.php/',
+		// Temp url will be removed as soon as we go live
+		'temp': 'http://smdc.api/'
 	});
 
 	smdc.config(['$routeProvider', function($routeProvider) {
