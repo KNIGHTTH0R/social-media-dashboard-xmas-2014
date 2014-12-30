@@ -205,15 +205,45 @@ module.exports = function(grunt) {
       }
     },
 
+    //run bower install
+    bower: {
+      install: {}
+    },
+
     // minify js files
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+        files: {
+            'dist/build.min.js': ['dist/*.js'],
+        }
       }
+    },
+
+    // concat js files into library and custom js file
+    concat: {
+      options: {
+        separator: ';',
+      },
+      libraries: {
+        src: ['./bower_components/{,*/}*.js', '!./bower_components/{,*/}*min.js'],
+        dest: 'dist/lib.js',
+      },
+      customJS: {
+        src: ['<%= smdc.app %>/js/{,*/}*.js' ],
+        dest: 'dist/main.js',
+      },
+    },
+
+    //create build html file
+    processhtml: {
+        build: {
+            files: {
+                'dist/index.html' : ['<%= smdc.app %>/index.html']
+            }
+        }
     }
   });
 
@@ -223,6 +253,8 @@ module.exports = function(grunt) {
     }
     grunt.task.run([
       'clean:server',
+      'bower',
+      'npm-install',
       'wiredep',
       'sails-linker',
       'autoprefixer',
@@ -233,15 +265,17 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'bower',
+    'npm-install',
     'wiredep',
     'sails-linker',
     'useminPrepare',
     'autoprefixer',
     'concat',
-    'cssmin',
-    'filerev',
-    'usemin',
-    'uglify'
+    'uglify',
+    'processhtml',
+    'usemin'
+    
   ]);
 
   grunt.registerTask('default', ['jshint']);
