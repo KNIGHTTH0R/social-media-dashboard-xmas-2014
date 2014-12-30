@@ -1,0 +1,56 @@
+.header {
+	background-color: $grey;
+	height: 15%;
+}
+
+
+.facebook-logo {
+	display: block;
+	background-color: $blue;
+	height: 100%;
+}
+
+.twitter-logo {
+	display: block;
+	background-color: $lightblue;
+	height: 100%;
+}
+
+
+.icon {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18pt;
+	color: #ccc;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+
+	&.icon-facebook { content: '\e800'; }
+
+	&.icon-twitter { content: '\e802'; }
+}
+
+.competa-fb-picture {
+	background-color: #ccc;
+	height: 100%;
+}
+
+.competa-tw-picture {
+	background-color: #ccc;
+	height: 100%; 
+}
+
+.competa-fb-username {
+	padding-left: 10px;	
+}
+
+.competa-tw-username {
+	padding-left: 10px;	
+}
+
+
+
