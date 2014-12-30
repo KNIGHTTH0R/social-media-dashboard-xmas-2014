@@ -5,7 +5,7 @@
  *    user zoom.
  */
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,900italic,300italic,300,400italic,700,700italic,900);
-@import url(http://weloveiconfonts.com/api/?family=brandico);
+@import url(http://weloveiconfonts.com/api/?family=brandico|fontawesome);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -414,15 +414,12 @@ input[type="submit"] {
   padding: 0;
   margin: 0; }
 
-@font-face {
-  font-family: 'fontello';
-  src: url("../../../font/fontello.eot?14366879");
-  src: url("../../../font/fontello.eot?14366879#iefix") format("embedded-opentype"), url("../../../font/fontello.woff?14366879") format("woff"), url("../../../font/fontello.ttf?14366879") format("truetype"), url("../../../font/fontello.svg?14366879#fontello") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 /* brandico */
 [class*="brandico-"]:before {
   font-family: 'brandico', sans-serif; }
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif; }
 
 body {
   font-family: klavika-web,sans-serif; }
@@ -436,16 +433,20 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0 0; }
 
 h1 {
-  font-size: 2rem;
-  color: #f7f7f7; }
+  font-size: 1.6rem;
+  color: #f7f7f7;
+  padding-top: 25px; }
 
 h2 {
-  font-size: 2.4rem; }
+  font-size: 4rem;
+  font-style: normal;
+  color: #f7f7f7;
+  padding-top: 5%; }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-style: bold;
-  margin-top: 3%; }
+  color: #4b4b4b; }
 
 h4 {
   font-size: 1.1rem;
@@ -584,45 +585,37 @@ ul {
 .box {
   height: 30vh; }
   .box.likes {
-    background-color: green; }
+    background-color: #8b9dc3; }
   .box.check-ins {
-    background-color: red; }
+    background-color: #ced4e5; }
   .box.talking-about {
-    background-color: yellow; }
+    background-color: #ced4e5; }
   .box.websiteurl {
-    background-color: blue; }
+    background-color: #8b9dc3; }
+  .box.status {
+    background-color: #0084b4; }
+  .box.followers {
+    background-color: #c0deed; }
+  .box.favorities {
+    background-color: #c0deed; }
+  .box.friends {
+    background-color: #0084b4; }
+
+.box-text {
+  padding-top: 10%; }
 
 .header {
   background-color: #dedede;
   height: 80px; }
 
-.facebook-logo {
+.logo {
   display: block;
-  background-color: #3b5998;
   height: 80px;
   width: 60px; }
-
-.twitter-logo {
-  display: block;
-  background-color: #4099FF;
-  height: 80px;
-  width: 60px; }
-
-.icon {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18pt;
-  color: #ccc;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center; }
-  .icon.icon-facebook {
-    content: '\e800'; }
-  .icon.icon-twitter {
-    content: '\e802'; }
+  .logo.facebook-logo {
+    background-color: #3b5998; }
+  .logo.twitter-logo {
+    background-color: #1dcaff; }
 
 .competa-picture {
   background-color: #ccc;
@@ -630,7 +623,8 @@ ul {
   width: 80px; }
 
 .competa-username {
-  padding-left: 10px; }
+  padding-left: 10px;
+  padding-top: 3%; }
 
 .nav ul {
   margin: 0 0 0 0;
@@ -712,8 +706,5 @@ ul {
 
 .content {
   padding: 2rem; }
-
-body {
-  color: black; }
 
 /*# sourceMappingURL=style.css.map */

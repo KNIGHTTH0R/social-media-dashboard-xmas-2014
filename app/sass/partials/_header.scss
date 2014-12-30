@@ -3,37 +3,18 @@
 	height: 80px;
 }
 
-
-.facebook-logo {
+.logo {
 	display: block;
-	background-color: $blue;
 	height: 80px;
 	width: 60px;
-}
 
-.twitter-logo {
-	display: block;
-	background-color: $lightblue;
-	height: 80px;
-	width: 60px;
-}
+	&.facebook-logo {
+		background-color: $blue;	
+	}
 
-
-.icon {
-	font-family: "fontello";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 18pt;
-	color: #ccc;
-	display: inline-block;
-	text-decoration: inherit;
-	width: 1em;
-	margin-right: .2em;
-	text-align: center;
-
-	&.icon-facebook { content: '\e800'; }
-
-	&.icon-twitter { content: '\e802'; }
+	&.twitter-logo {
+		background-color: $lightblue;
+	}
 }
 
 .competa-picture {
@@ -44,7 +25,8 @@
 
 
 .competa-username {
-	padding-left: 10px;	
+	padding-left: 10px;
+	padding-top: 3%;	
 }
 
 

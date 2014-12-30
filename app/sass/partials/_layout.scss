@@ -56,20 +56,41 @@ ul {
 .box {
 	height: 30vh;
 
-	&.likes {
-	background-color: green;
+		&.likes {
+		background-color: #8b9dc3;
+	}
+
+		&.check-ins {
+		background-color: #ced4e5;
+	}
+
+		&.talking-about {
+		background-color: #ced4e5;
+	}
+
+		&.websiteurl {
+		background-color: #8b9dc3;
+	}
+
+		&.status {
+		background-color: #0084b4;
+	}
+
+		&.followers {
+		background-color: #c0deed;
+	}
+
+		&.favorities {
+		background-color: #c0deed;
+	}
+
+		&.friends {
+		background-color: #0084b4;
+	}
+
 }
 
-	&.check-ins {
-	background-color: red;
-}
-
-	&.talking-about {
-	background-color: yellow;
-}
-
-	&.websiteurl {
-	background-color: blue;
-}
+.box-text {
+	padding-top: 10%;
 }
 
