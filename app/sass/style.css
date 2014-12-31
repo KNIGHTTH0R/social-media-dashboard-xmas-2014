@@ -4,8 +4,8 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,900italic,300italic,300,400italic,700,700italic,900);
 @import url(http://weloveiconfonts.com/api/?family=brandico|fontawesome);
+@import url(http://fonts.googleapis.com/css?family=Armata|Nobile:700,400italic,700italic,400|Sintony:400,700);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -421,9 +421,6 @@ input[type="submit"] {
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif; }
 
-body {
-  font-family: klavika-web,sans-serif; }
-
 a {
   color: #333; }
   a:hover {
@@ -434,7 +431,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 1.5rem;
-  color: #f7f7f7; }
+  color: #f7f7f7;
+  font-family: 'Armata',  sans-serif; }
 
 h2 {
   font-size: 4.5rem;
@@ -450,24 +448,28 @@ h3 {
   color: #f7f7f7; }
 
 h4 {
-  font-size: 1.1rem; }
+  font-size: 1.1rem;
+  font-family: "Armata"; }
 
 h5 {
   font-size: 1.8rem;
   font-style: bold;
-  color: #333; }
+  color: #333;
+  font-family: 'Armata', sans-serif; }
 
 h6 {
   font-size: 0.8rem;
   color: #929292;
-  padding-right: 5px; }
+  padding-right: 5px;
+  font-family: 'Nobile', sans-serif; }
 
 p {
   text-align: left;
   font-size: 1.1rem;
   padding-right: 10px;
   color: #333;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+  font-family: 'Nobile', sans-serif; }
 
 @media screen and (max-width: 1024px) {
   h1, h2, h3, h4, h5 {
