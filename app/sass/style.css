@@ -622,17 +622,17 @@ ul {
   .box.likes {
     background-color: #3b5998; }
   .box.check-ins {
-    background-color: lighten #3b5998, 15%; }
+    background-color: #5f7ec1; }
   .box.talking-about {
-    background-color: lighten #3b5998, 15%; }
+    background-color: #5f7ec1; }
   .box.websiteurl {
     background-color: #3b5998; }
   .box.status {
     background-color: #00aced; }
   .box.followers {
-    background-color: lighten #00aced, 15%; }
+    background-color: #3bc9ff; }
   .box.favorities {
-    background-color: lighten #00aced, 15%; }
+    background-color: #3bc9ff; }
   .box.friends {
     background-color: .box.friends lightblue; }
 

@@ -85,11 +85,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c6d1', end
 	}
 
 		&.check-ins {
-		background-color: lighten ($blue, 15%);
+		background-color: lighten($blue, 15%);
 	}
 
 		&.talking-about {
-		background-color: lighten ($blue, 15%);
+		background-color: lighten($blue, 15%);
 	}
 
 		&.websiteurl {
@@ -101,11 +101,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c6d1', end
 	}
 
 		&.followers {
-		background-color: lighten ($lightblue, 15%);
+		background-color: lighten($lightblue, 15%);
 	}
 
 		&.favorities {
-		background-color: lighten ($lightblue, 15%);
+		background-color: lighten($lightblue, 15%);
 	}
 
 		&.friends {
