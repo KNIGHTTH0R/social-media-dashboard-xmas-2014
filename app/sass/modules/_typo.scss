@@ -22,17 +22,26 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0 0;
 }
 
+<<<<<<< .merge_file_6djU1Y
 h1 {font-size: 1.5rem; 
     color: $white;
     font-family: 'Armata', 
     sans-serif;}
 h2 {font-size: 4.5rem;font-style: normal ; color: $white ; opacity: 0.4; padding-top: 2%; text-shadow: 1px 1px 3px black}
+=======
+h1 {font-size: 1.5rem; color: $white;}
+h2 {font-size: 4.5rem;font-style: normal ; color: $white ; opacity: 0.3; padding-top: 2%; text-shadow: 1px 1px 3px black}
+>>>>>>> .merge_file_62E2EY
 h3 {font-size: 1.8rem;
     font-style: bold;
     color:  $white ;
     }
 h4 {font-size: 1.1rem;
+<<<<<<< .merge_file_6djU1Y
     font-family: 'Armata',
+=======
+    font-style: bold;
+>>>>>>> .merge_file_62E2EY
     }
 h5 {font-size: 1.8rem;
     font-style: bold;
@@ -41,8 +50,11 @@ h5 {font-size: 1.8rem;
   }
 h6 {font-size: 0.8rem;
     color: $darkgrey;
+<<<<<<< .merge_file_6djU1Y
     padding-right: 5px;
     font-family: 'Nobile', sans-serif;
+=======
+>>>>>>> .merge_file_62E2EY
     }
 
 p {

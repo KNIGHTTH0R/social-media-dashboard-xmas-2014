@@ -17,6 +17,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4fbff', end
 
 	&.facebook {
 		background: #f4f8ff; /* Old browsers */
+
 background: -moz-linear-gradient(-45deg,  #f4f8ff 0%, #3b5998 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f4f8ff), color-stop(100%,#3b5998)); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(-45deg,  #f4f8ff 0%,#3b5998 100%); /* Chrome10+,Safari5.1+ */
@@ -24,6 +25,7 @@ background: -o-linear-gradient(-45deg,  #f4f8ff 0%,#3b5998 100%); /* Opera 11.10
 background: -ms-linear-gradient(-45deg,  #f4f8ff 0%,#3b5998 100%); /* IE10+ */
 background: linear-gradient(135deg,  #f4f8ff 0%,#3b5998 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8ff', endColorstr='#3b5998',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 
 
 
@@ -55,6 +57,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8ff', end
 	padding-left: 10px;
 	padding-top: 3%;	
 }
+
 
 
 
