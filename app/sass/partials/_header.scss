@@ -1,6 +1,16 @@
 .header {
-	background-color: $grey;
 	height: 80px;
+	border-bottom: 1px solid $white;
+
+	&.twitter {
+		background-color: $lightblue;
+		
+	}
+
+	&.facebook {
+		background-color: $blue;
+
+	}
 }
 
 .logo {

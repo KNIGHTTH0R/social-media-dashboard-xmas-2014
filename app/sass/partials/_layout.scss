@@ -36,16 +36,44 @@ ul {
 	margin-bottom: 0;
 	margin-top: 0;
 	display: block;
+
+
 }
 
 .last-posts-slider {
-	margin-top: 10px;
-	height: auto;
+	background: #bcc5d3; /* Old browsers */
+background: -moz-linear-gradient(top,  #bcc5d3 0%, #f6f7f8 7%, #f6f7f8 50%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcc5d3), color-stop(7%,#f6f7f8), color-stop(50%,#f6f7f8), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #bcc5d3 0%,#f6f7f8 7%,#f6f7f8 50%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #bcc5d3 0%,#f6f7f8 7%,#f6f7f8 50%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #bcc5d3 0%,#f6f7f8 7%,#f6f7f8 50%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #bcc5d3 0%,#f6f7f8 7%,#f6f7f8 50%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcc5d3', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+
+
+	display: block;
+	padding-top: 10px;
+	margin: 0;
+	height: 30vh;
 }
 
 .last-twitts-slider {
-	margin-top: 10px;
-	height: auto;
+	background: #a1c6d1; /* Old browsers */
+background: -moz-linear-gradient(top,  #a1c6d1 0%, #e1f2f7 7%, #e1f2f7 50%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a1c6d1), color-stop(7%,#e1f2f7), color-stop(50%,#e1f2f7), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #a1c6d1 0%,#e1f2f7 7%,#e1f2f7 50%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #a1c6d1 0%,#e1f2f7 7%,#e1f2f7 50%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #a1c6d1 0%,#e1f2f7 7%,#e1f2f7 50%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #a1c6d1 0%,#e1f2f7 7%,#e1f2f7 50%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c6d1', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+
+	
+	display: block;
+	padding-top: 10px;
+	margin: 0;
+	height: 30vh;
 }
 
 .informations-facebook {
@@ -57,19 +85,19 @@ ul {
 	height: 30vh;
 
 		&.likes {
-		background-color: #8b9dc3;
+		background-color: $blue;
 	}
 
 		&.check-ins {
-		background-color: #ced4e5;
+		background-color: #8b9dc3;
 	}
 
 		&.talking-about {
-		background-color: #ced4e5;
+		background-color: #8b9dc3;
 	}
 
 		&.websiteurl {
-		background-color: #8b9dc3;
+		background-color: $blue;
 	}
 
 		&.status {
@@ -77,11 +105,11 @@ ul {
 	}
 
 		&.followers {
-		background-color: #c0deed;
+		background-color: #98c9e2;
 	}
 
 		&.favorities {
-		background-color: #c0deed;
+		background-color: #98c9e2;
 	}
 
 		&.friends {
@@ -92,5 +120,9 @@ ul {
 
 .box-text {
 	padding-top: 10%;
+}
+
+.padding{
+	padding-top: 25%;
 }
 

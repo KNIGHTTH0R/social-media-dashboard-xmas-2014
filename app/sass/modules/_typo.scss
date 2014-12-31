@@ -26,26 +26,28 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0 0;
 }
 
-h1 {font-size: 1.6rem; color: $white; padding-top: 25px;}
-h2 {font-size: 4rem;font-style: normal; color: $white; padding-top: 5%;}
+h1 {font-size: 1.5rem; color: $white;}
+h2 {font-size: 4.5rem;font-style: normal ; color: $white ; opacity: 0.3; padding-top: 2%; text-shadow: 1px 1px 3px black}
 h3 {font-size: 1.8rem;
     font-style: bold;
-    color:  darken( $darkgrey, 28%) ;
+    color:  $white ;
     }
 h4 {font-size: 1.1rem;
     font-style: bold;
     }
-h5 {font-size: 1rem;}
+h5 {font-size: 1.8rem;
+    font-style: bold;
+    color:  $black ;}
 h6 {font-size: 0.8rem;
     color: $darkgrey;
     }
 
 p {
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   padding-right: 10px;
   color: $black;
-  line-height: 14.5pt;
+  line-height: 1.5rem;
 
 }
 

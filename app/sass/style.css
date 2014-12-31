@@ -433,27 +433,30 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0 0; }
 
 h1 {
-  font-size: 1.6rem;
-  color: #f7f7f7;
-  padding-top: 25px; }
+  font-size: 1.5rem;
+  color: #f7f7f7; }
 
 h2 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-style: normal;
   color: #f7f7f7;
-  padding-top: 5%; }
+  opacity: 0.3;
+  padding-top: 2%;
+  text-shadow: 1px 1px 3px black; }
 
 h3 {
   font-size: 1.8rem;
   font-style: bold;
-  color: #4b4b4b; }
+  color: #f7f7f7; }
 
 h4 {
   font-size: 1.1rem;
   font-style: bold; }
 
 h5 {
-  font-size: 1rem; }
+  font-size: 1.8rem;
+  font-style: bold;
+  color: #333; }
 
 h6 {
   font-size: 0.8rem;
@@ -461,10 +464,10 @@ h6 {
 
 p {
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   padding-right: 10px;
   color: #333;
-  line-height: 14.5pt; }
+  line-height: 1.5rem; }
 
 @media screen and (max-width: 1024px) {
   h1, h2, h3, h4, h5 {
@@ -571,12 +574,48 @@ ul {
   display: block; }
 
 .last-posts-slider {
-  margin-top: 10px;
-  height: auto; }
+  background: #bcc5d3;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #bcc5d3 0%, #f6f7f8 7%, #f6f7f8 50%, #ffffff 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bcc5d3), color-stop(7%, #f6f7f8), color-stop(50%, #f6f7f8), color-stop(100%, #ffffff));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #bcc5d3 0%, #f6f7f8 7%, #f6f7f8 50%, #ffffff 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #bcc5d3 0%, #f6f7f8 7%, #f6f7f8 50%, #ffffff 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #bcc5d3 0%, #f6f7f8 7%, #f6f7f8 50%, #ffffff 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #bcc5d3 0%, #f6f7f8 7%, #f6f7f8 50%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcc5d3', endColorstr='#ffffff',GradientType=0 );
+  /* IE6-9 */
+  display: block;
+  padding-top: 10px;
+  margin: 0;
+  height: 30vh; }
 
 .last-twitts-slider {
-  margin-top: 10px;
-  height: auto; }
+  background: #a1c6d1;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #a1c6d1 0%, #e1f2f7 7%, #e1f2f7 50%, #ffffff 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a1c6d1), color-stop(7%, #e1f2f7), color-stop(50%, #e1f2f7), color-stop(100%, #ffffff));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #a1c6d1 0%, #e1f2f7 7%, #e1f2f7 50%, #ffffff 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #a1c6d1 0%, #e1f2f7 7%, #e1f2f7 50%, #ffffff 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #a1c6d1 0%, #e1f2f7 7%, #e1f2f7 50%, #ffffff 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #a1c6d1 0%, #e1f2f7 7%, #e1f2f7 50%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c6d1', endColorstr='#ffffff',GradientType=0 );
+  /* IE6-9 */
+  display: block;
+  padding-top: 10px;
+  margin: 0;
+  height: 30vh; }
 
 .informations-facebook {
   display: block;
@@ -585,28 +624,35 @@ ul {
 .box {
   height: 30vh; }
   .box.likes {
-    background-color: #8b9dc3; }
+    background-color: #3b5998; }
   .box.check-ins {
-    background-color: #ced4e5; }
-  .box.talking-about {
-    background-color: #ced4e5; }
-  .box.websiteurl {
     background-color: #8b9dc3; }
+  .box.talking-about {
+    background-color: #8b9dc3; }
+  .box.websiteurl {
+    background-color: #3b5998; }
   .box.status {
     background-color: #0084b4; }
   .box.followers {
-    background-color: #c0deed; }
+    background-color: #98c9e2; }
   .box.favorities {
-    background-color: #c0deed; }
+    background-color: #98c9e2; }
   .box.friends {
     background-color: #0084b4; }
 
 .box-text {
   padding-top: 10%; }
 
+.padding {
+  padding-top: 25%; }
+
 .header {
-  background-color: #dedede;
-  height: 80px; }
+  height: 80px;
+  border-bottom: 1px solid #f7f7f7; }
+  .header.twitter {
+    background-color: #1dcaff; }
+  .header.facebook {
+    background-color: #3b5998; }
 
 .logo {
   display: block;
