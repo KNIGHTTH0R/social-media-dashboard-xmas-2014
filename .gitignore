@@ -1,5 +1,6 @@
 .idea
 api/config.php
-app/sass/.sass-cache
 bower_components
 node_modules
+.sass-cache/
+.tmp/
