@@ -19,15 +19,15 @@
 			<div><img class = "user-picture float" src= "competa-logo.png"></img></div>
 			<div class = "informations-post float col col_6">
 				<div class = "user-name">
-					<h4>{{user.screen_name}}</h4>
+					<h4 class= "bold">{{user.screen_name}}</h4>
 				</div>
 				<div ng-repeat="tweet in tweets" class = "post">
 					<div class = "date">
 						<h6>{{tweet.created_at}}</h6>
 					</div>
 					<p class= "float">{{tweet.text}}</p>
-					Favourited: {{tweet.favorite_count}}
-					Retweeted: {{tweet.retweet_count}}
+					<h6><span class="fontawesome-star-empty">{{tweet.favorite_count}}</span></h6>
+					<h6><span class="fontawesome-refresh">{{tweet.retweet_count}}</span></h6>
 				</div>
 			</div>
 		</li>
