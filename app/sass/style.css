@@ -450,8 +450,7 @@ h3 {
   color: #f7f7f7; }
 
 h4 {
-  font-size: 1.1rem;
-  font-style: bold; }
+  font-size: 1.1rem; }
 
 h5 {
   font-size: 1.8rem;
@@ -641,6 +640,12 @@ ul {
 
 .padding {
   padding-top: 25%; }
+
+.white {
+  color: #f7f7f7; }
+
+.bold {
+  font-style: bold; }
 
 .header {
   height: 80px;
