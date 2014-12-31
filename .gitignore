@@ -3,3 +3,4 @@ api/config.php
 app/sass/.sass-cache
 bower_components
 node_modules
+dist

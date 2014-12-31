@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       },
       compass: {
         files: ['<%= smdc.app %>/sass/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
+        tasks: ['compass:server', 'autoprefixer:dev']
       },
       livereload: {
         options: {
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         },
         files: [
           '<%= smdc.app %>/{,*/}*.html',
-          '.tmp/sass/{,*/}*.css',
+          '<%= smdc.app %>/sass/{,*/}*.css',
           '<%= smdc.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -60,11 +60,11 @@ module.exports = function(grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
+              // connect.static('.tmp'),
+              // connect().use(
+              //   '/bower_components',
+              //   connect.static('./bower_components')
+              // ),
               connect.static(appConfig.app)
             ];
           }
@@ -103,19 +103,41 @@ module.exports = function(grunt) {
       }
     },
 
+    //copy development files to dist to make a distribution version
+    copy: {
+      build: {
+        cwd: '<%= smdc.app %>',
+        src: [
+          'sass/*.css',
+          'views/{,*/}*.html',
+          'img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '*.html'
+        ],
+        dest: '<%= smdc.dist %>',
+        expand: true
+      },
+    },
+
     // Empties folders to start fresh
     clean: {
       dist: {
         files: [{
           dot: true,
           src: [
-            '.tmp',
             '<%= smdc.dist %>/{,*/}*',
             '!<%= smdc.dist %>/.git{,*/}*'
           ]
         }]
       },
-      server: '.tmp'
+      build: {
+        src: [ 
+          'dist/js/{,*/}*.js',
+          '!dist/js/main.min.js',
+          '!dist/js/vendor.min.js',
+          'dist/sass/{,*/}*',
+          '!dist/sass/style.css'
+        ]
+      }
     },
 
     // Add vendor prefixed styles
@@ -123,14 +145,26 @@ module.exports = function(grunt) {
       options: {
         browsers: ['last 1 version']
       },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/sass/',
-          src: '{,*/}*.css',
-          dest: '.tmp/sass/'
-        }]
+      dev: {
+        expand: true,
+        cwd: '<%= smdc.app %>/sass',
+        src: [ '**/*.css' ],
+        dest: '<%= smdc.app %>/sass'
+      },
+      build: {
+        expand: true,
+        cwd: '<%= smdc.dist %>/sass',
+        src: [ '**/*.css' ],
+        dest: '<%= smdc.dist %>/sass'
       }
+      // dist: {
+      //   files: [{
+      //     expand: true,
+      //     cwd: '.tmp/sass/',
+      //     src: '{,*/}*.css',
+      //     dest: '.tmp/sass/'
+      //   }]
+      // }
     },
 
     'sails-linker': {
@@ -177,36 +211,51 @@ module.exports = function(grunt) {
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
+
+    // OLD Compass
+    //  compass: {
+    //   options: {
+    //     sassDir: '<%= smdc.app %>/sass',
+    //     cssDir: '.tmp/sass',
+    //     generatedImagesDir: '.tmp/images/generated',
+    //     imagesDir: '<%= smdc.app %>/images',
+    //     javascriptsDir: '<%= smdc.app %>/js',
+    //     fontsDir: '<%= smdc.app %>../font',
+    //     importPath: './bower_components',
+    //     httpImagesPath: '/images',
+    //     httpGeneratedImagesPath: '/images/generated',
+    //     httpFontsPath: '../font',
+    //     relativeAssets: false,
+    //     assetCacheBuster: false,
+    //     raw: 'Sass::Script::Number.precision = 10\n'
+    //   },
+    //   dist: {
+    //     options: {
+    //       generatedImagesDir: '<%= smdc.dist %>/images/generated'
+    //     }
+    //   },
+    //   server: {
+    //     options: {
+    //       debugInfo: true
+    //     }
+    //   }
+    // },
+
+    // new compass
     compass: {
-      options: {
-        sassDir: '<%= smdc.app %>/sass',
-        cssDir: '.tmp/sass',
-        generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= smdc.app %>/images',
-        javascriptsDir: '<%= smdc.app %>/js',
-        fontsDir: '<%= smdc.app %>../font',
-        importPath: './bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '../font',
-        relativeAssets: false,
-        assetCacheBuster: false,
-        raw: 'Sass::Script::Number.precision = 10\n'
-      },
-      dist: {
-        options: {
-          generatedImagesDir: '<%= smdc.dist %>/images/generated'
-        }
-      },
       server: {
         options: {
-          debugInfo: true
+          sassDir: '<%= smdc.app %>/sass',
+          cssDir: '<%= smdc.app %>/sass'
         }
       }
     },
 
     //run bower install
     bower: {
+      options: {
+        targetDir: 'bower_components'
+      },
       install: {}
     },
 
@@ -217,7 +266,8 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-            'dist/build.min.js': ['dist/*.js'],
+            'dist/js/vendor.min.js': ['dist/js/vendor.js'],
+            'dist/js/main.min.js': ['dist/js/main.js']
         }
       }
     },
@@ -229,11 +279,11 @@ module.exports = function(grunt) {
       },
       libraries: {
         src: ['./bower_components/{,*/}*.js', '!./bower_components/{,*/}*min.js'],
-        dest: 'dist/lib.js',
+        dest: 'dist/js/vendor.js',
       },
       customJS: {
         src: ['<%= smdc.app %>/js/{,*/}*.js' ],
-        dest: 'dist/main.js',
+        dest: 'dist/js/main.js',
       },
     },
 
@@ -252,12 +302,10 @@ module.exports = function(grunt) {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
     grunt.task.run([
-      'clean:server',
       'bower',
       'npm-install',
       'wiredep',
       'sails-linker',
-      'autoprefixer',
       'connect:livereload',
       'watch'
     ]);
@@ -269,12 +317,14 @@ module.exports = function(grunt) {
     'npm-install',
     'wiredep',
     'sails-linker',
+    'copy',
     'useminPrepare',
-    'autoprefixer',
+    'autoprefixer:build',
     'concat',
     'uglify',
     'processhtml',
-    'usemin'
+    'usemin',
+    'clean:build'
     
   ]);
 
