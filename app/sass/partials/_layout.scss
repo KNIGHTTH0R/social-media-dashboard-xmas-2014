@@ -79,6 +79,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c6d1', end
 
 .box {
 	height: 30vh;
+	display: table;
 
 		&.likes {
 		background-color: $blue;
@@ -116,6 +117,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c6d1', end
 
 .box-text {
 	padding-top: 10%;
+	display: table;
+	vertical-align: middle;
 }
 
 .padding{
