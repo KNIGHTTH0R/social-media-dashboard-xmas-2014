@@ -157,14 +157,6 @@ module.exports = function(grunt) {
         src: [ '**/*.css' ],
         dest: '<%= smdc.dist %>/sass'
       }
-      // dist: {
-      //   files: [{
-      //     expand: true,
-      //     cwd: '.tmp/sass/',
-      //     src: '{,*/}*.css',
-      //     dest: '.tmp/sass/'
-      //   }]
-      // }
     },
 
     'sails-linker': {
@@ -211,37 +203,6 @@ module.exports = function(grunt) {
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
-
-    // OLD Compass
-    //  compass: {
-    //   options: {
-    //     sassDir: '<%= smdc.app %>/sass',
-    //     cssDir: '.tmp/sass',
-    //     generatedImagesDir: '.tmp/images/generated',
-    //     imagesDir: '<%= smdc.app %>/images',
-    //     javascriptsDir: '<%= smdc.app %>/js',
-    //     fontsDir: '<%= smdc.app %>../font',
-    //     importPath: './bower_components',
-    //     httpImagesPath: '/images',
-    //     httpGeneratedImagesPath: '/images/generated',
-    //     httpFontsPath: '../font',
-    //     relativeAssets: false,
-    //     assetCacheBuster: false,
-    //     raw: 'Sass::Script::Number.precision = 10\n'
-    //   },
-    //   dist: {
-    //     options: {
-    //       generatedImagesDir: '<%= smdc.dist %>/images/generated'
-    //     }
-    //   },
-    //   server: {
-    //     options: {
-    //       debugInfo: true
-    //     }
-    //   }
-    // },
-
-    // new compass
     compass: {
       server: {
         options: {
