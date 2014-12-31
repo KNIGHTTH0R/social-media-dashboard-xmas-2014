@@ -109,7 +109,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c6d1', end
 	}
 
 		&.friends {
-		background-color: &lightblue;
+		background-color: $lightblue;
 	}
 
 }
