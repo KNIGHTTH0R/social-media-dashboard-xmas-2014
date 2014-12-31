@@ -618,8 +618,7 @@ ul {
   height: 30vh; }
 
 .box {
-  height: 30vh;
-  display: table; }
+  height: 30vh; }
   .box.likes {
     background-color: #3b5998; }
   .box.check-ins {
@@ -638,9 +637,11 @@ ul {
     background-color: #00aced; }
 
 .box-text {
-  padding-top: 10%;
-  display: table;
-  vertical-align: middle; }
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
 
 .padding {
   padding-top: 25%; }
