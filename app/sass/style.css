@@ -565,7 +565,7 @@ h2 {
   font-size: 4.5rem;
   font-style: normal;
   color: #f7f7f7;
-  opacity: 0.3;
+  opacity: 0.4;
   padding-top: 2%;
   text-shadow: 1px 1px 3px black;
 }
@@ -580,20 +580,20 @@ h3 {
 /* line 35, modules/_typo.scss */
 h4 {
   font-size: 1.1rem;
-  font-style: bold;
 }
 
-/* line 38, modules/_typo.scss */
+/* line 37, modules/_typo.scss */
 h5 {
   font-size: 1.8rem;
   font-style: bold;
   color: #333;
 }
 
-/* line 41, modules/_typo.scss */
+/* line 40, modules/_typo.scss */
 h6 {
   font-size: 0.8rem;
   color: #929292;
+  padding-right: 5px;
 }
 
 /* line 45, modules/_typo.scss */
@@ -802,56 +802,63 @@ ul {
 }
 
 /* line 79, partials/_layout.scss */
-.informations-facebook {
-  display: block;
-  margin: 0;
-}
-
-/* line 84, partials/_layout.scss */
 .box {
   height: 30vh;
+  display: table;
 }
-/* line 87, partials/_layout.scss */
+/* line 83, partials/_layout.scss */
 .box.likes {
   background-color: #3b5998;
 }
-/* line 91, partials/_layout.scss */
+/* line 86, partials/_layout.scss */
 .box.check-ins {
-  background-color: #8b9dc3;
+  background-color: #5f7ec1;
 }
-/* line 95, partials/_layout.scss */
+/* line 90, partials/_layout.scss */
 .box.talking-about {
-  background-color: #8b9dc3;
+  background-color: #5f7ec1;
 }
-/* line 99, partials/_layout.scss */
+/* line 94, partials/_layout.scss */
 .box.websiteurl {
   background-color: #3b5998;
 }
-/* line 103, partials/_layout.scss */
+/* line 98, partials/_layout.scss */
 .box.status {
-  background-color: #0084b4;
+  background-color: #00aced;
 }
-/* line 107, partials/_layout.scss */
+/* line 102, partials/_layout.scss */
 .box.followers {
-  background-color: #98c9e2;
+  background-color: #3bc9ff;
 }
-/* line 111, partials/_layout.scss */
+/* line 106, partials/_layout.scss */
 .box.favorities {
-  background-color: #98c9e2;
+  background-color: #3bc9ff;
 }
-/* line 115, partials/_layout.scss */
+/* line 110, partials/_layout.scss */
 .box.friends {
-  background-color: #0084b4;
+  background-color: #00aced;
 }
 
-/* line 121, partials/_layout.scss */
+/* line 116, partials/_layout.scss */
 .box-text {
   padding-top: 10%;
+  display: table;
+  vertical-align: middle;
 }
 
-/* line 125, partials/_layout.scss */
+/* line 122, partials/_layout.scss */
 .padding {
   padding-top: 25%;
+}
+
+/* line 126, partials/_layout.scss */
+.white {
+  color: #f7f7f7;
+}
+
+/* line 130, partials/_layout.scss */
+.bold {
+  font-style: bold;
 }
 
 /* line 1, partials/_header.scss */
@@ -868,12 +875,12 @@ ul {
   /* Chrome10+,Safari5.1+ */
   /* Opera 11.10+ */
   /* IE10+ */
-  background: linear-gradient(135deg, #f4fbff 0%, #c0deed 100%);
+  background: linear-gradient(135deg, #f4fbff 0%, #00aced 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4fbff', endColorstr='#c0deed',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4fbff', endColorstr='#00aced',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
 }
-/* line 19, partials/_header.scss */
+/* line 18, partials/_header.scss */
 .header.facebook {
   background: #f4f8ff;
   /* Old browsers */
@@ -882,35 +889,35 @@ ul {
   /* Chrome10+,Safari5.1+ */
   /* Opera 11.10+ */
   /* IE10+ */
-  background: linear-gradient(135deg, #f4f8ff 0%, #b0bcd5 100%);
+  background: linear-gradient(135deg, #f4f8ff 0%, #3b5998 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8ff', endColorstr='#b0bcd5',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8ff', endColorstr='#3b5998',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
 }
 
-/* line 33, partials/_header.scss */
+/* line 35, partials/_header.scss */
 .logo {
   display: block;
   height: 80px;
   width: 60px;
 }
-/* line 38, partials/_header.scss */
+/* line 40, partials/_header.scss */
 .logo.facebook-logo {
   background-color: #3b5998;
 }
-/* line 42, partials/_header.scss */
+/* line 44, partials/_header.scss */
 .logo.twitter-logo {
-  background-color: #1dcaff;
+  background-color: #00aced;
 }
 
-/* line 47, partials/_header.scss */
+/* line 49, partials/_header.scss */
 .competa-picture {
   background-color: #ccc;
   height: 80px;
   width: 80px;
 }
 
-/* line 54, partials/_header.scss */
+/* line 56, partials/_header.scss */
 .competa-username {
   padding-left: 10px;
   padding-top: 3%;

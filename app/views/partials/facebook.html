@@ -1,12 +1,67 @@
-{{insights.name}}
-<div ng-repeat="post in posts">
-	<h1>Post {{$index}}</h1>
-	{{post.message}}
-	<hr>
-</div>
+<div class = "box-facebook col col_half">
+	<div id = "fb">
 
-<h1>Facebook Insights</h1>
-Likes: {{insights.likes}}
-Checkins: {{insights.checkins}}
-Talking about: {{insights.talking_about_count}}
-Website url: {{insights.website}}
+		<div class = "header facebook" >
+			<div class = "logo facebook-logo float col col_1">
+				<h1 class="padding"><span class="brandico-facebook"></span></h1>
+			</div>
+			<img class = "competa-picture  float" src= "img/competa-logo.png" />
+			<div class = "competa-username float col col_5">
+				<h5>Competa</h5>
+				<h6>facebook</h6>
+			</div>
+		</div>
+
+		<ul class = "last-posts-slider col col_half">
+			<li>
+				<div><img class = "user-picture float" src= "img/competa-logo.png"></img></div>
+				<div class = "informations-post float col col_6">
+					<div class = "user-name">
+						<h4 class= "bold">{{insights.name}}</h4>
+					</div>
+					<div ng-repeat="post in posts" class = "post">
+						<div class = "date">
+							<h6>{{post.created_time}}</h6>
+						</div>
+						<p class= "float">{{post.message}}</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<div class = "informations-facebook col col_half">	
+			<div class = "box likes float col col_4">
+				<div class = "box-text">
+					<h3>{{insights.likes}}</h3>	
+					<h1>Likes</h1>
+					<h2><span class="fontawesome-thumbs-up"></span></h2>
+				</div>
+			</div>
+			
+			<div class = "box talking-about float col col_4">
+				<div class = "box-text">
+					<h3>{{insights.talking_about_count}}</h3>	
+					<h1>Talking about</h1>
+					<h2><span class="fontawesome-comments-alt"></span></h2>
+				</div>
+			</div>
+
+			<div class= "box check-ins col col_4 float">
+				<div class = "box-text">
+					<h3>{{insights.checkins}}</h3>	
+					<h1>Check-ins</h1>
+					<h2><span class="fontawesome-map-marker"></span></h2>
+				</div>
+			</div>
+
+			<div class = "box websiteurl col col_4 float">
+				<div class = "box-text">
+					<h1>Website url</h1>	
+					<h4 class = "white">{{insights.website}}</h4>
+					<h2><span class="fontawesome-link"></span></h2>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

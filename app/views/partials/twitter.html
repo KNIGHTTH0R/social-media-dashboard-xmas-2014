@@ -1,12 +1,73 @@
-Friends: {{user.friends_count}}
-Followers: {{user.followers_count}}
-Tweets count: {{user.statuses_count}}
-Favourites count: {{user.favourites_count}}
-<hr>
-<h1>{{user.name}} </h1> <h5>@{{user.screen_name}}</h5>
-<div ng-repeat="tweet in tweets">
-	{{tweet.text}}
-	Favourited: {{tweet.favorite_count}}
-	Retweeted: {{tweet.retweet_count}}
-	<hr>
+<div class = "box-twitter col col_half ">
+	<div class = "header twitter">
+
+		<div class = "logo twitter-logo float col col_1">
+			<h1 class="padding"><span class="brandico-twitter-bird"></span></h1>
+		</div>
+
+		<img class = "competa-picture  float" src= "img/competa-logo.png" />
+
+		<div class = "competa-username float col col_5">
+			<h5>{{user.name}} - @{{user.screen_name}}</h5>
+			<h6>twitter</h6>	
+		</div>
+
+	</div>
+
+	<ul class = "last-twitts-slider col col_half">	
+		<li>
+			<div><img class = "user-picture float" src= "img/competa-logo.png"></img></div>
+			<div class = "informations-post float col col_6">
+				<div class = "user-name">
+					<h4 class= "bold">{{user.screen_name}}</h4>
+				</div>
+				<div ng-repeat="tweet in tweets" class = "post">
+					<div class = "date">
+						<h6>{{tweet.created_at}}</h6>
+					</div>
+					<p class= "float">{{tweet.text}}</p>
+					<div class = "twitter-post-icons">
+						<h6 class = "float"><span class="fontawesome-star-empty">{{tweet.favorite_count}}</span></h6>
+						<h6 class = "float"><span class="fontawesome-refresh">{{tweet.retweet_count}}</span></h6>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+				
+	<div class = "informations-twitter col col_half">
+
+		<div class = "box status float col col_4">
+			<div class = "box-text">
+				<h3>{{user.statuses_count}}</h3>	
+				<h1>Tweets</h1>
+				<h2><span class="fontawesome-align-left"></span></h2>
+			</div>
+		</div>
+
+		<div class = "box followers float col col_4">
+			<div class = "box-text">
+				<h3>{{user.followers_count}}</h3>	
+				<h1>Followers</h1>
+				<h2><span class="fontawesome-eye-open"></span></h2>
+			</div>
+		</div>
+
+		<div class = "box favorities float col col_4">
+			<div class = "box-text">
+				<h3>{{user.favourites_count}}</h3>	
+				<h1>Favorities</h1>
+				<h2><span class="fontawesome-star"></span></h2>
+			</div>
+		</div>
+
+		<div class = "box friends float col col_4">
+			<div class = "box-text">
+				<h3>{{user.friends_count}}</h3>	
+				<h1>Friends</h1>
+				<h2><span class="fontawesome-group"></span></h2>
+			</div>
+		</div>
+
+	</div>
 </div>

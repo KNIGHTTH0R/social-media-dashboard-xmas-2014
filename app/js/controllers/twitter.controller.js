@@ -8,6 +8,12 @@
 smdc.controller('TwitterCtrl',['$scope','$http', 'TwitterService', function($scope, $http, TwitterService) {
 
 	/**
+	 * [tweets description]
+	 * @type {Array}
+	 */
+	$scope.tweets = [];
+
+	/**
 	 * Returns Twitter user information (CompetaIT)
 	 */
 	TwitterService.user.get(function(user) {
@@ -15,10 +21,13 @@ smdc.controller('TwitterCtrl',['$scope','$http', 'TwitterService', function($sco
 	});
 
 	/**
-	 * Returns 5 latest Tweets of the CompetaIT account
+	 * Returns 5 latest Tweets of the CompetaIT account and converts created_at date
 	 */
 	TwitterService.tweets.query(function(tweets) {
-		$scope.tweets = tweets;
+		angular.forEach(tweets, function(data) {
+			data.created_at = moment(data.created_at).fromNow();
+			$scope.tweets.push(data);
+		});
 	});
 
 }]);

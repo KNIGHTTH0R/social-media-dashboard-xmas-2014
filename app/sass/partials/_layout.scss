@@ -69,31 +69,26 @@ background: linear-gradient(to bottom,  #a1c6d1 0%,#e1f2f7 7%,#e1f2f7 50%,#fffff
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c6d1', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
 
-	
 	display: block;
 	padding-top: 10px;
 	margin: 0;
 	height: 30vh;
 }
 
-.informations-facebook {
-	display: block;
-	margin: 0;
-}
 
 .box {
 	height: 30vh;
+	display: table;
 
 		&.likes {
 		background-color: $blue;
 	}
-
 		&.check-ins {
-		background-color: #8b9dc3;
+		background-color: lighten($blue, 15%);
 	}
 
 		&.talking-about {
-		background-color: #8b9dc3;
+		background-color: lighten($blue, 15%);
 	}
 
 		&.websiteurl {
@@ -101,28 +96,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c6d1', end
 	}
 
 		&.status {
-		background-color: #0084b4;
+		background-color: $lightblue;
 	}
 
 		&.followers {
-		background-color: #98c9e2;
+		background-color: lighten($lightblue, 15%);
 	}
 
 		&.favorities {
-		background-color: #98c9e2;
+		background-color: lighten($lightblue, 15%);
 	}
 
 		&.friends {
-		background-color: #0084b4;
+		background-color: $lightblue;
 	}
 
 }
 
 .box-text {
 	padding-top: 10%;
+	display: table;
+	vertical-align: middle;
 }
 
 .padding{
 	padding-top: 25%;
 }
 
+.white {
+	color: $white;
+}
+
+.bold {
+	font-style: bold;
+}
