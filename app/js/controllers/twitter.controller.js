@@ -18,6 +18,8 @@ smdc.controller('TwitterCtrl',['$scope','$http', 'TwitterService', function($sco
 	 */
 	TwitterService.user.get(function(user) {
 		$scope.user = user;
+	}, function err() {
+		console.log('Could not make a connection to Twitter user Service');
 	});
 
 	/**
@@ -28,6 +30,8 @@ smdc.controller('TwitterCtrl',['$scope','$http', 'TwitterService', function($sco
 			data.created_at = moment(data.created_at).fromNow();
 			$scope.tweets.push(data);
 		});
+	}, function err() {
+		console.log('Could not make a connection to Twitter tweet Service');
 	});
 
 }]);

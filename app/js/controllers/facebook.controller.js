@@ -22,6 +22,8 @@ smdc.controller('FacebookCtrl',['$scope', 'FacebookService', function($scope, Fa
 			posts.created_time = moment(posts.created_time).fromNow();
 			$scope.posts.push(posts);
 		});
+	},function err() {
+		console.log('Could not make a connection to Facebook posts Service');
 	});
 		
 	/**
@@ -29,6 +31,8 @@ smdc.controller('FacebookCtrl',['$scope', 'FacebookService', function($scope, Fa
 	 */
 	FacebookService.insights.get(function(insights) {
 		$scope.insights = insights;
+	},function err() {
+		console.log('Could not make a connection to Facebook insights Service');
 	});
 	
 }]);
