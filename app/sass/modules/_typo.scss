@@ -52,7 +52,7 @@ h5 {font-size: 1.8rem;
     color:  $black ;
     font-family: 'Nobile', sans-serif;
   }
-h6 {font-size: 0.9rem;
+h6 {font-size: 0.8rem;
     color: $darkgrey;
     padding-right: 5px;
     font-family: 'Nobile', sans-serif;
@@ -76,7 +76,7 @@ p {
 
 @media screen and (max-width: 770px) {
     h1, h4, h5 {
-      font-size: 1rem;
+      font-size: 0.9rem;
       .col & {
         word-break: break-all;
       }
