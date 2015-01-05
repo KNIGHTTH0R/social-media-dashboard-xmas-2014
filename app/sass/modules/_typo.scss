@@ -12,12 +12,9 @@
 }
 
 a {
-  color: $black;
-  &:hover {
-    text-decoration: none;
-    font-style: bold;
-    color: $blue;
-  }
+  font-style: bold;
+  color: $blue;
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
