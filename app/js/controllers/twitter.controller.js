@@ -35,12 +35,22 @@ smdc.controller('TwitterCtrl',['$scope','$http','$sce', 'TwitterService', functi
 		console.log('Could not make a connection to Twitter tweet Service');
 	});
 
+	/**
+	 * Gets all hashtags in the tweets and adds the class "Hashtag" to it
+	 * @param  {string} str 
+	 * @return {string} 
+	 */
 	var getHashTags = function(str) {
 		var matches = str.match(/#[a-z\d]+/ig);
-		for(i = 0; i < matches.length; i++) {
-			var str = str.replace(matches[i], '<span class="hashtag">' + matches[i] + '</span>');
+
+		if(!matches) {
+			return $sce.trustAsHtml(str);
+		} else {
+			for(i = 0; i < matches.length; i++) {
+				var str = str.replace(matches[i], '<span class="hashtag">' + matches[i] + '</span>');
+			}
+			return $sce.trustAsHtml(str);
 		}
-		return $sce.trustAsHtml(str);
 	};
 
 }]);
