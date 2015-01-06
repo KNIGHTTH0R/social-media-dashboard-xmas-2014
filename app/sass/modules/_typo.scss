@@ -11,62 +11,71 @@
   font-family: 'FontAwesome', sans-serif;
 }
 
-a {
-  color: $black;
-  &:hover {
-    text-decoration: none;
-  }
+.hashtag {
+  font-family: 'Nobile';
+  font-style: bold;
+  color: $blue;
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0 0;
 }
 
-
-h1 {font-size: 1.5rem; 
-    color: $white;
-    font-family: 'Armata', 
-    sans-serif;}
-h2 {font-size: 4.5rem;font-style: normal ; color: $white ; opacity: 0.4; padding-top: 2%; text-shadow: 1px 1px 3px black}
-h3 {font-size: 1.8rem;
-    font-style: bold;
-    color:  $white ;
-    }
-h4 {font-size: 1.1rem;
-    font-family: 'Armata';
-    font-style: bold;
-    }
+h1 {
+  font-size: 1.5rem;
+  color: $white;
+  font-family: 'Nobile';
+}
+h2 {
+  font-size: 4.5rem;
+  font-style: normal;
+  color: $white ;
+  opacity: 0.3;
+  padding-top: 2%;
+  text-shadow: 1px 1px 3px black;
+}
+h3 {
+  font-size: 1.8rem;
+  font-style: bold;
+  color:  $white ;
+}
+h4 {
+  font-size: 1.1rem;
+  font-family: 'Nobile';
+  font-style: bold;
+}
 h5 {font-size: 1.8rem;
     font-style: bold;
     color:  $black ;
-    font-family: 'Armata', sans-serif;
+    font-family: 'Nobile', sans-serif;
   }
 h6 {font-size: 0.8rem;
     color: $darkgrey;
     padding-right: 5px;
     font-family: 'Nobile', sans-serif;
-    }
+}
+
 
 p {
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   padding-right: 10px;
   color: $black;
   line-height: 1.5rem;
   font-family: 'Nobile', sans-serif;
-
 }
 
-@media screen and (max-width: 1024px) {
-  h1, h2, h3, h4, h5 {
-    font-size: 1.2rem;
+@media screen and (max-width: 1210px) {
+  h1, h4, h5 {
+    font-size: 1.1rem;
     word-break: break-all;
   }
 }
 
 @media screen and (max-width: 770px) {
-    h1, h2, h3, h4, h5 {
-      font-size: 1rem;
+    h1, h4, h5 {
+      font-size: 0.9rem;
       .col & {
         word-break: break-all;
       }
@@ -77,9 +86,3 @@ p {
   text-align: center;
 }
 
-.background_red,
-.background_grey {
-  a {
-    color: $white;
-  }
-}

@@ -36,6 +36,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8ff', end
 	display: block;
 	height: 80px;
 	width: 60px;
+	@include vertical-align;
 
 	&.facebook-logo {
 		background-color: $blue;	

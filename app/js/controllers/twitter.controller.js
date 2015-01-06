@@ -5,7 +5,7 @@
  * Twitter controller
  */
 
-smdc.controller('TwitterCtrl',['$scope','$http', 'TwitterService', function($scope, $http, TwitterService) {
+smdc.controller('TwitterCtrl',['$scope','$http','$sce', 'TwitterService', function($scope, $http,$sce, TwitterService) {
 
 	/**
 	 * [tweets description]
@@ -18,6 +18,8 @@ smdc.controller('TwitterCtrl',['$scope','$http', 'TwitterService', function($sco
 	 */
 	TwitterService.user.get(function(user) {
 		$scope.user = user;
+	}, function err() {
+		console.log('Could not make a connection to Twitter user Service');
 	});
 
 	/**
@@ -26,8 +28,29 @@ smdc.controller('TwitterCtrl',['$scope','$http', 'TwitterService', function($sco
 	TwitterService.tweets.query(function(tweets) {
 		angular.forEach(tweets, function(data) {
 			data.created_at = moment(data.created_at).fromNow();
+			data.text = getHashTags(data.text);
 			$scope.tweets.push(data);
 		});
+	}, function err() {
+		console.log('Could not make a connection to Twitter tweet Service');
 	});
+
+	/**
+	 * Gets all hashtags in the tweets and adds the class "Hashtag" to it
+	 * @param  {string} str 
+	 * @return {string} 
+	 */
+	var getHashTags = function(str) {
+		var matches = str.match(/#[a-z\d]+/ig);
+
+		if(!matches) {
+			return $sce.trustAsHtml(str);
+		} else {
+			for(i = 0; i < matches.length; i++) {
+				var str = str.replace(matches[i], '<span class="hashtag">' + matches[i] + '</span>');
+			}
+			return $sce.trustAsHtml(str);
+		}
+	};
 
 }]);

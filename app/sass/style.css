@@ -490,7 +490,7 @@ body {
 }
 /* line 36, modules/_grid.scss */
 .col.col_5 {
-  width: 31.25vw;
+  width: 33.00vw;
 }
 /* line 40, modules/_grid.scss */
 .col.col_4 {
@@ -536,11 +536,10 @@ input[type="submit"] {
 }
 
 /* line 14, modules/_typo.scss */
-a {
-  color: #333;
-}
-/* line 16, modules/_typo.scss */
-a:hover {
+.hashtag {
+  font-family: 'Nobile';
+  font-style: bold;
+  color: #3b5998;
   text-decoration: none;
 }
 
@@ -549,11 +548,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0 0;
 }
 
-/* line 26, modules/_typo.scss */
+/* line 25, modules/_typo.scss */
 h1 {
   font-size: 1.5rem;
   color: #f7f7f7;
-  font-family: 'Armata',  sans-serif;
+  font-family: 'Nobile';
 }
 
 /* line 30, modules/_typo.scss */
@@ -561,34 +560,34 @@ h2 {
   font-size: 4.5rem;
   font-style: normal;
   color: #f7f7f7;
-  opacity: 0.4;
+  opacity: 0.3;
   padding-top: 2%;
   text-shadow: 1px 1px 3px black;
 }
 
-/* line 31, modules/_typo.scss */
+/* line 38, modules/_typo.scss */
 h3 {
   font-size: 1.8rem;
   font-style: bold;
   color: #f7f7f7;
 }
 
-/* line 35, modules/_typo.scss */
+/* line 43, modules/_typo.scss */
 h4 {
   font-size: 1.1rem;
-  font-family: 'Armata';
+  font-family: 'Nobile';
   font-style: bold;
 }
 
-/* line 39, modules/_typo.scss */
+/* line 48, modules/_typo.scss */
 h5 {
   font-size: 1.8rem;
   font-style: bold;
   color: #333;
-  font-family: 'Armata', sans-serif;
+  font-family: 'Nobile', sans-serif;
 }
 
-/* line 44, modules/_typo.scss */
+/* line 53, modules/_typo.scss */
 h6 {
   font-size: 0.8rem;
   color: #929292;
@@ -596,42 +595,36 @@ h6 {
   font-family: 'Nobile', sans-serif;
 }
 
-/* line 50, modules/_typo.scss */
+/* line 60, modules/_typo.scss */
 p {
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   padding-right: 10px;
   color: #333;
   line-height: 1.5rem;
   font-family: 'Nobile', sans-serif;
 }
 
-@media screen and (max-width: 1024px) {
-  /* line 61, modules/_typo.scss */
-  h1, h2, h3, h4, h5 {
-    font-size: 1.2rem;
+@media screen and (max-width: 1210px) {
+  /* line 70, modules/_typo.scss */
+  h1, h4, h5 {
+    font-size: 1.1rem;
     word-break: break-all;
   }
 }
 @media screen and (max-width: 770px) {
-  /* line 68, modules/_typo.scss */
-  h1, h2, h3, h4, h5 {
-    font-size: 1rem;
+  /* line 77, modules/_typo.scss */
+  h1, h4, h5 {
+    font-size: 0.9rem;
   }
-  /* line 70, modules/_typo.scss */
-  .col h1, .col h2, .col h3, .col h4, .col h5 {
+  /* line 79, modules/_typo.scss */
+  .col h1, .col h4, .col h5 {
     word-break: break-all;
   }
 }
-/* line 76, modules/_typo.scss */
+/* line 85, modules/_typo.scss */
 .center {
   text-align: center;
-}
-
-/* line 82, modules/_typo.scss */
-.background_red a,
-.background_grey a {
-  color: #f7f7f7;
 }
 
 @media print {
@@ -901,24 +894,28 @@ ul {
   display: block;
   height: 80px;
   width: 60px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
-/* line 40, partials/_header.scss */
+/* line 41, partials/_header.scss */
 .logo.facebook-logo {
   background-color: #3b5998;
 }
-/* line 44, partials/_header.scss */
+/* line 45, partials/_header.scss */
 .logo.twitter-logo {
   background-color: #00aced;
 }
 
-/* line 49, partials/_header.scss */
+/* line 50, partials/_header.scss */
 .competa-picture {
   background-color: #ccc;
   height: 80px;
   width: 80px;
 }
 
-/* line 56, partials/_header.scss */
+/* line 57, partials/_header.scss */
 .competa-username {
   padding-left: 10px;
   padding-top: 3%;
