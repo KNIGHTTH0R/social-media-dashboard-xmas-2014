@@ -740,6 +740,7 @@ p {
   float: left;
 }
 
+
 /* line 27, partials/_layout.scss */
 li {
   list-style: none;
@@ -912,6 +913,30 @@ ul {
   background-color: #ccc;
   height: 80px;
   width: 80px;
+}
+
+#container-slider {
+    width:500px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+#container-slider ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        transition: left .5s ease-in-out;
+
+    }
+#container-slider li {
+        display: inline-block;
+        width: 500px;
+        height: 300px;
+    }
+#container-slider li p {
+  white-space: normal;
 }
 
 /* line 57, partials/_header.scss */
