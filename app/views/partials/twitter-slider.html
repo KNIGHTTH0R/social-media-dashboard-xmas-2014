@@ -1,0 +1,14 @@
+<div id="container-slider"> 
+    <ul id="ul">
+        <li ng-repeat="tweet in tweets">
+        	<div class = "date">
+				<h6>{{tweet.created_at}}</h6>
+			</div>
+			<p class= "float" ng-bind-html="tweet.text"></p>
+			<div class = "twitter-post-icons">
+				<h6 class = "float"><span class="fontawesome-star-empty">{{tweet.favorite_count}}</span></h6>
+				<h6 class = "float"><span class="fontawesome-refresh">{{tweet.retweet_count}}</span></h6>
+			</div>
+		</li>
+    </ul>
+</div>
