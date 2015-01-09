@@ -21,15 +21,10 @@
 				<div class = "user-name">
 					<h4 class= "bold">{{user.screen_name}}</h4>
 				</div>
-				<div ng-repeat="tweet in tweets" class = "post">
-					<div class = "date">
-						<h6>{{tweet.created_at}}</h6>
-					</div>
-					<slider></slider>
-					<div class = "twitter-post-icons">
-						<h6 class = "float"><span class="fontawesome-star-empty">{{tweet.favorite_count}}</span></h6>
-						<h6 class = "float"><span class="fontawesome-refresh">{{tweet.retweet_count}}</span></h6>
-					</div>
+				<div class = "post">
+					
+					<slider data="twitter"></slider>
+				
 				</div>
 			</div>
 		</li>
