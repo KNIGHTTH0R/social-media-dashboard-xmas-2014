@@ -537,24 +537,25 @@ input[type="submit"] {
 
 /* line 14, modules/_typo.scss */
 .hashtag {
+  font-family: 'Nobile';
   font-style: bold;
   color: #3b5998;
   text-decoration: none;
 }
 
-/* line 20, modules/_typo.scss */
+/* line 21, modules/_typo.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0 0;
 }
 
-/* line 24, modules/_typo.scss */
+/* line 25, modules/_typo.scss */
 h1 {
   font-size: 1.5rem;
   color: #f7f7f7;
   font-family: 'Nobile';
 }
 
-/* line 29, modules/_typo.scss */
+/* line 30, modules/_typo.scss */
 h2 {
   font-size: 4.5rem;
   font-style: normal;
@@ -564,21 +565,21 @@ h2 {
   text-shadow: 1px 1px 3px black;
 }
 
-/* line 37, modules/_typo.scss */
+/* line 38, modules/_typo.scss */
 h3 {
   font-size: 1.8rem;
   font-style: bold;
   color: #f7f7f7;
 }
 
-/* line 42, modules/_typo.scss */
+/* line 43, modules/_typo.scss */
 h4 {
   font-size: 1.1rem;
   font-family: 'Nobile';
   font-style: bold;
 }
 
-/* line 47, modules/_typo.scss */
+/* line 48, modules/_typo.scss */
 h5 {
   font-size: 1.8rem;
   font-style: bold;
@@ -586,7 +587,7 @@ h5 {
   font-family: 'Nobile', sans-serif;
 }
 
-/* line 52, modules/_typo.scss */
+/* line 53, modules/_typo.scss */
 h6 {
   font-size: 0.8rem;
   color: #929292;
@@ -594,7 +595,7 @@ h6 {
   font-family: 'Nobile', sans-serif;
 }
 
-/* line 58, modules/_typo.scss */
+/* line 60, modules/_typo.scss */
 p {
   text-align: left;
   font-size: 1.0rem;
@@ -605,23 +606,23 @@ p {
 }
 
 @media screen and (max-width: 1210px) {
-  /* line 68, modules/_typo.scss */
+  /* line 70, modules/_typo.scss */
   h1, h4, h5 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     word-break: break-all;
   }
 }
 @media screen and (max-width: 770px) {
-  /* line 75, modules/_typo.scss */
+  /* line 77, modules/_typo.scss */
   h1, h4, h5 {
     font-size: 0.9rem;
   }
-  /* line 77, modules/_typo.scss */
+  /* line 79, modules/_typo.scss */
   .col h1, .col h4, .col h5 {
     word-break: break-all;
   }
 }
-/* line 83, modules/_typo.scss */
+/* line 85, modules/_typo.scss */
 .center {
   text-align: center;
 }
@@ -948,7 +949,7 @@ ul {
 /* line 2, partials/_nav.scss */
 .nav ul {
   margin: 0;
-  padding: 0 0 0 0;
+  padding: 0;
   list-style: none;
 }
 /* line 7, partials/_nav.scss */
