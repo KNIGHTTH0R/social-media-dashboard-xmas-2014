@@ -1,6 +1,10 @@
 social-media-dashboard-xmas-2014
 ================================
 
+This was a small fun Christmas project for members of the Competa JavaScript & Front-end BootCamp.
+
+We used AngularJS, Grunt, SASS and Scrum.
+
 ## Config file
 The REST API relies on a config file that is not present in the GitHub repo because it contains API keys for social media platforms.
 Copy `api/config.template.php` to `api/config.php` and enter the API keys for your accounts.
